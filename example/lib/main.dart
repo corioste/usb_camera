@@ -99,20 +99,12 @@ class _MyAppState extends State<MyApp> {
                   children: [
                     TextButton(
                         onPressed: () async {
-                          PermissionStatus status =
-                              await Permission.storage.request();
-                          if (status == PermissionStatus.granted) {
-                            _flutterUsbCameraPlugin.takePicture(cameraCount);
-                          }
+                          _flutterUsbCameraPlugin.takePicture(cameraCount);
                         },
                         child: const Text('拍照')),
                     TextButton(
                         onPressed: () async {
-                          PermissionStatus status =
-                              await Permission.camera.request();
-                          if (status == PermissionStatus.granted) {
-                            _flutterUsbCameraPlugin.startPreview(cameraCount);
-                          }
+                          _flutterUsbCameraPlugin.startPreview(cameraCount);
                         },
                         child: const Text('开始')),
                     TextButton(
