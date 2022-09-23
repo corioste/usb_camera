@@ -112,6 +112,10 @@ public class UsbCameraViewFactory  extends PlatformViewFactory {
 
     public void takePicture() {
         if (null != camera) {
+            if (null == previewData) {
+                return;
+            }
+            stopPreview();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             YuvImage yuvImage = new YuvImage(previewData, ImageFormat.NV21, 1280, 720, null);
             yuvImage.compressToJpeg(new Rect(0, 0, yuvImage.getWidth() , yuvImage.getHeight()), 100, out);
@@ -152,20 +156,13 @@ public class UsbCameraViewFactory  extends PlatformViewFactory {
 
     public void startPreview() {
         if (null != camera) {
-            
             camera.openCamera(mUvcCameraView.mUVCCameraView, null);
-            DebugLog.log("开始展示");
-        } else {
-            DebugLog.log("开始展示,相机为空");
         }
     }
 
     public void stopPreview() {
         if (null != camera) {
             camera.closeCamera();
-            DebugLog.log("结束展示");
-        } else {
-            DebugLog.log("结束展示,相机为空");
         }
     }
 }
