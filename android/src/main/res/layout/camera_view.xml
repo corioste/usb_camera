@@ -8,9 +8,9 @@
 
     <com.jiangdg.ausbc.widget.AspectRatioTextureView
         android:id="@+id/texture_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="5dp"
+        android:layout_width="1280dp"
+        android:layout_height="720dp"
+        android:layout_margin="0dp"
         />
 
 <!--    <TextView-->
