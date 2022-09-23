@@ -118,7 +118,6 @@ public class UsbCameraViewFactory  extends PlatformViewFactory {
             byte[] imageBytes = out.toByteArray();
             // Bitmap image = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
             // iv.setImageBitmap(image);
-            100, out);
             DebugLog.log(Arrays.toString(imageBytes));
         }
     }
