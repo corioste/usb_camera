@@ -113,8 +113,8 @@ public class UsbCameraViewFactory  extends PlatformViewFactory {
     public void takePicture() {
         if (null != camera) {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
-            YuvImage yuvImage = new YuvImage(previewData, ImageFormat.NV21, 1280, 720, null);
-            yuvImage.compressToJpeg(new Rect(0, 0, yuvImage.getWidth() / 2, yuvImage.getHeight() / 2), 50, out);
+            YuvImage yuvImage = new YuvImage(previewData, ImageFormat.NV21, 1080, 720, null);
+            yuvImage.compressToJpeg(new Rect(0, 0, yuvImage.getWidth() , yuvImage.getHeight()), 50, out);
             byte[] imageBytes = out.toByteArray();
             // Bitmap image = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
             // iv.setImageBitmap(image);
